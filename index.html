@@ -1,71 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mini Store Checkout System</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mini Store Checkout System</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<div class="container">
 
-    <div class="container">
+  <h1>MINI STORE CHECKOUT SYSTEM</h1>
 
-        <h1>MINI STORE CHECKOUT SYSTEM</h1>
+  <label for="customerName">Customer Name</label>
+  <input type="text" id="customerName" placeholder="Enter customer name"/><br> 
 
-        <div class="field">
-            <label for="customerName">Customer Name</label>
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Enter customer name"
-            >
-        </div>
+  <label for="productCount">Number of Products</label>
+  <input type="number" id="productCount" min="1" placeholder="Enter number of products" />
+  
+  <div id="productsContainer"></div>
 
-        <div class="field">
-            <label for="productCount">Number of Products</label>
-            <input
-                type="number"
-                id="productCount"
-                min="1"
-                step="1"
-                placeholder="Enter number of products"
-            >
-        </div>
+  <label for="deliveryOption">Delivery Option</label>
+  <select id="deliveryOption">
+    <option value="1">1 - Store Pickup (₱0)</option>
+    <option value="2">2 - Standard Delivery (₱80)</option>
+    <option value="3">3 - Express Delivery (₱150)</option>
+  </select><br>
 
-        <button type="button" id="generateBtn">
-            Generate Product Fields
-        </button>
+  <button type="button" id="calculateBtn">Calculate Order</button>
 
-        <div id="productsContainer"></div>
+  <div id="validationMessage"></div>
+  <pre id="orderSummary"></pre>
 
-        <div class="field">
-            <label for="deliveryOption">Delivery Option</label>
+</div>
 
-            <select id="deliveryOption">
-                <option value="1">Store Pickup</option>
-                <option value="2">Standard Delivery</option>
-                <option value="3">Express Delivery</option>
-            </select>
-        </div>
-
-        <button type="button" id="calculateBtn">
-            Calculate Order
-        </button>
-
-        <div id="validationMessage" class="validation"></div>
-
-        <div
-            id="orderSummary"
-            class="summary"
-            style="display: none;"
-        ></div>
-
-    </div>
-
-    <!-- CONNECT JAVASCRIPT -->
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
